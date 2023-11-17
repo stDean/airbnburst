@@ -3,3 +3,8 @@ export { default as Container } from "./Container";
 export { default as Search } from "./Search";
 export { default as UserMenu } from "./UserMenu";
 export { default as MenuItem } from "./MenuItem";
+export { default as Model } from "./Button";
+export { default as Modal } from "./Modal";
+export { default as Heading } from "./Heading";
+export { default as Input } from "./Input";
+export { default as Button } from "./Button";

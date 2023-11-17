@@ -7,6 +7,8 @@ import { signOut } from "next-auth/react";
 
 import MenuItem from "./MenuItem";
 import Avatar from "./Avatar";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
+import useLoginModal from "@/app/hooks/useLoginModal";
 
 interface UserMenuProps {
   currentUser: string | null;
@@ -15,6 +17,9 @@ interface UserMenuProps {
 const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  const registerModal = useRegisterModal();
+  const loginModal = useLoginModal();
 
   const toggleOpen = () => {
     setIsOpen(isOpen => !isOpen);
@@ -77,20 +82,8 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
                 </>
               ) : (
                 <>
-                  <MenuItem
-                    label="Login"
-                    // onClick={loginModal.onOpen}
-                    onClick={() => {
-                      console.log("open login modal");
-                    }}
-                  />
-                  <MenuItem
-                    label="Sign up"
-                    // onClick={registerModal.onOpen}
-                    onClick={() => {
-                      console.log("open register modal");
-                    }}
-                  />
+                  <MenuItem label="Login" onClick={loginModal.onOpen} />
+                  <MenuItem label="Sign up" onClick={registerModal.onOpen} />
                 </>
               )}
             </div>
