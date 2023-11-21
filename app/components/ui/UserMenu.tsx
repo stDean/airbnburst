@@ -9,9 +9,10 @@ import MenuItem from "./MenuItem";
 import Avatar from "./Avatar";
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import { SafeUser } from "@/app/types";
 
 interface UserMenuProps {
-  currentUser: string | null;
+  currentUser?: SafeUser | null;
 }
 
 const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
@@ -42,10 +43,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
           <AiOutlineMenu />
 
           <div className="hidden md:block">
-            <Avatar
-              // src={currentUser?.image}
-              src={null}
-            />
+            <Avatar src={currentUser?.image} />
           </div>
         </div>
 
@@ -83,7 +81,7 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
               ) : (
                 <>
                   <MenuItem label="Login" onClick={loginModal.onOpen} />
-                  <MenuItem label="Sign up" onClick={registerModal.onOpen} />
+                  <MenuItem label="Sign Up" onClick={registerModal.onOpen} />
                 </>
               )}
             </div>

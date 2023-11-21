@@ -9,13 +9,13 @@ import { toast } from "react-hot-toast";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useRegisterModal from "../hooks/useRegisterModal";
-// import useLoginModal from "../hooks/useLoginModal";
+import useLoginModal from "../hooks/useLoginModal";
 import { Button, Heading, Input, Modal } from "./ui";
 
 const RegisterModal = () => {
   const registerModal = useRegisterModal();
-  // const loginModal = useLoginModal();
-  const [isLoading, setIsLoading] = useState(false);
+  const loginModal = useLoginModal();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const {
     register,
@@ -50,7 +50,7 @@ const RegisterModal = () => {
 
   const onToggle = useCallback(() => {
     registerModal.onClose();
-    // loginModal.onOpen();
+    loginModal.onOpen();
   }, [registerModal]);
 
   const bodyContent = (
