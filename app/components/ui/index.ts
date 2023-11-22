@@ -8,3 +8,6 @@ export { default as Modal } from "./Modal";
 export { default as Heading } from "./Heading";
 export { default as Input } from "./Input";
 export { default as Button } from "./Button";
+export { default as Categories } from "./Categories";
+export { default as CategoryInput } from "./CategoryInput";
+export { default as CountrySelect } from "./CountrySelect";

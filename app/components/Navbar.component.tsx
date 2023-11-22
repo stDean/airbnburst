@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Container, Logo, Search, UserMenu } from "./ui";
+import { Categories, Container, Logo, Search, UserMenu } from "./ui";
 import { SafeUser } from "@/app/types";
 
 interface NavbarProps {
@@ -17,6 +17,8 @@ const Navbar: FC<NavbarProps> = ({ currentUser }) => {
             <UserMenu currentUser={currentUser} />
           </div>
         </Container>
+
+        <Categories />
       </div>
     </div>
   );
