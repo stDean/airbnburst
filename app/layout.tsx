@@ -4,7 +4,7 @@ import { Nunito } from "next/font/google";
 import { ClientOnly, Navbar, RegisterModal, RentModal } from "./components";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/LoginModal.component";
-import getCurrentUser from "./actions/getCurrevtUser";
+import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata: Metadata = {
   title: "AirBnB",
