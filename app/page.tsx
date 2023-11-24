@@ -1,7 +1,32 @@
-export default function Home() {
+import getCurrentUser from "./actions/getCurrentUser";
+import getListings from "./actions/getListings";
+import { ClientOnly, EmptyState, ListingCard } from "./components";
+import { Container } from "./components/ui";
+
+export default async function Home() {
+  const listings = await getListings();
+  const currentUser = await getCurrentUser();
+
+  if (listings.length === 0) {
+    return (
+      <ClientOnly>
+        <EmptyState showReset />
+      </ClientOnly>
+    );
+  }
   return (
-    <main className="text-rose-500 text-2xl">
-      <h1>Hello America</h1>
-    </main>
+    <ClientOnly>
+      <Container>
+        <div className="pt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
+          {listings.map(listing => (
+            <ListingCard
+              key={listing.id}
+              data={listing}
+              currentUser={currentUser}
+            />
+          ))}
+        </div>
+      </Container>
+    </ClientOnly>
   );
 }

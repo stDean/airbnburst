@@ -14,3 +14,4 @@ export { default as CountrySelect } from "./CountrySelect";
 export { default as Map } from "./Map";
 export { default as Counter } from "./Counter";
 export { default as ImageUploader } from "./ImageUploader";
+export { default as HeartButton } from "./HeartButton";
