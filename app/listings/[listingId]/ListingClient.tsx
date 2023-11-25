@@ -8,14 +8,13 @@ import { differenceInDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
 
 import { Container } from "@/app/components/ui";
-import { SafeListing, SafeUser } from "@/app/types";
-import { Reservation } from "@prisma/client";
+import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { categories } from "@/app/components/ui/Categories";
 import { ListingHead, ListingInfo, ListingReservation } from "@/app/components";
 
 interface ListingClientProps {
-  reservations?: Reservation[];
+  reservations?: SafeReservation[];
   listing: SafeListing & {
     user: SafeUser;
   };
