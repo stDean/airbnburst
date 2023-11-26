@@ -28,6 +28,8 @@ const UserMenu: FC<UserMenuProps> = ({ currentUser }: UserMenuProps) => {
     setIsOpen(isOpen => !isOpen);
   }, [isOpen]);
 
+  
+
   const onRent = useCallback(() => {
     if (!currentUser) {
       return loginModal.onOpen();

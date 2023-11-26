@@ -7,3 +7,5 @@ export { default as ListingCard } from "./ListingCard.component";
 export { default as ListingHead } from "./ListingHead.component";
 export { default as ListingInfo } from "./ListingInfo.component";
 export { default as ListingReservation } from "./ListingReservation.component";
+export { default as SearchModal } from "./SearchModal.component";
+export { default as Loader } from "./Loader.component";
