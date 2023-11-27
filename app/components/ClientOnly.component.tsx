@@ -6,6 +6,7 @@ interface ClientOnlyProps {
   children: ReactNode;
 }
 
+// to prevent hydration error
 const ClientOnly: FC<ClientOnlyProps> = ({ children }) => {
   const [hasMounted, setHasMounted] = useState(false);
 

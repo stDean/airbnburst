@@ -15,6 +15,7 @@ import getCurrentUser from "./actions/getCurrentUser";
 export const metadata: Metadata = {
   title: "AirBnB",
   description: "The airbnb clone app with next js.",
+  
 };
 
 const font = Nunito({ subsets: ["latin"] });

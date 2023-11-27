@@ -21,9 +21,13 @@ export async function POST(
     throw new Error("Invalid ID");
   }
 
+  // get the contents in the users favorite array
   let favoriteIds = [...(currentUser.favoriteIds || [])];
+
+  // then push the new listing id to that array
   favoriteIds.push(listingId);
 
+  // then update the users data with the favorite ids array
   const user = await prisma.user.update({
     where: {
       id: currentUser.id,
@@ -36,6 +40,7 @@ export async function POST(
   return NextResponse.json(user);
 }
 
+// this just removes the listing id from the favorite array
 export async function DELETE(
   req: NextRequest,
   { params }: { params: ParamsInterface }

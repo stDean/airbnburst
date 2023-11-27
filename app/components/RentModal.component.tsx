@@ -57,6 +57,7 @@ const RentModal = () => {
     },
   });
 
+  // watch the values incase they change
   const location = watch("location");
   const category = watch("category");
   const guestCount = watch("guestCount");
@@ -64,6 +65,7 @@ const RentModal = () => {
   const bathroomCount = watch("bathroomCount");
   const imageSrc = watch("imageSrc");
 
+  // a walk around to register the values of the custom input
   const setCustomValue = (id: string, value: any) => {
     setValue(id, value, {
       shouldDirty: true,
@@ -72,6 +74,7 @@ const RentModal = () => {
     });
   };
 
+  // dynamically rerender the map based on the location value
   const Map = useMemo(
     () =>
       dynamic(() => import("./ui/Map"), {
@@ -115,6 +118,7 @@ const RentModal = () => {
         {categories.map(item => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
+              // from the watched category value
               onClick={category => setCustomValue("category", category)}
               label={item.label}
               icon={item.icon}
