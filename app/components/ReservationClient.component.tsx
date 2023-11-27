@@ -6,12 +6,12 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 import { SafeReservation, SafeUser } from "../types";
-import { Container, Heading } from "../components/ui";
-import { ListingCard } from "../components";
+import { Container, Heading } from "./ui";
+import ListingCard from "./ListingCard.component";
 
 interface ReservationClientProps {
   reservations: SafeReservation[];
-  currentUser?: SafeUser | null;
+  currentUser?: SafeUser;
 }
 
 const ReservationClient: FC<ReservationClientProps> = ({

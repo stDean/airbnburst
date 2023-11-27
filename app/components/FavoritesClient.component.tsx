@@ -3,15 +3,18 @@
 import { FC } from "react";
 
 import { SafeListing, SafeUser } from "../types";
-import { Container, Heading } from "../components/ui";
-import { ListingCard } from "../components";
+import { Container, Heading } from "./ui";
+import ListingCard from "./ListingCard.component";
 
 interface FavoritesClientProps {
   listings: SafeListing[];
-  currentUser?: SafeUser | null;
+  currentUser?: SafeUser;
 }
 
-const FavoritesClient: FC<FavoritesClientProps> = ({ listings, currentUser }) => {
+const FavoritesClient: FC<FavoritesClientProps> = ({
+  listings,
+  currentUser,
+}) => {
   return (
     <Container>
       <Heading title="Favorites" subtitle="List of places you liked!" />

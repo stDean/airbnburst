@@ -1,7 +1,6 @@
-import { ClientOnly, EmptyState } from "@/app/components";
+import { ClientOnly, EmptyState, ListingClient } from "@/app/components";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 import getListingById from "@/app/actions/getListingById";
-import ListingClient from "./ListingClient";
 import getReservations from "@/app/actions/getReservations";
 
 interface ListingParamsProps {

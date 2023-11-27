@@ -6,12 +6,12 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 
 import { SafeListing, SafeUser } from "../types";
-import { Container, Heading } from "../components/ui";
-import { ListingCard } from "../components";
+import { Container, Heading } from "./ui";
+import ListingCard from "./ListingCard.component";
 
 interface PropertiesClientProps {
   listings: SafeListing[];
-  currentUser?: SafeUser | null;
+  currentUser?: SafeUser;
 }
 
 const PropertiesClient: FC<PropertiesClientProps> = ({

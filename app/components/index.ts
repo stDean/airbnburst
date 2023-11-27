@@ -9,3 +9,8 @@ export { default as ListingInfo } from "./ListingInfo.component";
 export { default as ListingReservation } from "./ListingReservation.component";
 export { default as SearchModal } from "./SearchModal.component";
 export { default as Loader } from "./Loader.component";
+export { default as FavoritesClient } from "./FavoritesClient.component";
+export { default as PropertiesClient } from "./PropertiesClient.component";
+export { default as ReservationClient } from "./ReservationClient.component";
+export { default as TripsClient } from "./TripsClient.component";
+export { default as ListingClient } from "./ListingClient.component";
